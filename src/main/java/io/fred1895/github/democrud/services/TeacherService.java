@@ -37,7 +37,6 @@ public class TeacherService {
                 .map(teacher -> {
                     teacher.setCpf(newTeacher.getCpf());
                     teacher.setNome(newTeacher.getNome());
-                    teacher.setTelefone(newTeacher.getTelefone());
                     return teacherRepository.save(teacher);
                 })
                 .orElseThrow(() -> new TeacherNotFoundException("Objeto nao encontrado"));
