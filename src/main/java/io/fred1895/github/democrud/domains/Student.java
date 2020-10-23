@@ -1,12 +1,13 @@
 package io.fred1895.github.democrud.domains;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
 @Data
+@NoArgsConstructor
+@Entity
 public class Student implements Serializable {
 
     @Id
@@ -17,6 +18,7 @@ public class Student implements Serializable {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "course_id")
     private Course course;
+
 }

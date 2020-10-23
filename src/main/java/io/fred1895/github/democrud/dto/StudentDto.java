@@ -2,9 +2,13 @@ package io.fred1895.github.democrud.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.fred1895.github.democrud.domains.Student;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@Data
+@NoArgsConstructor
 public class StudentDto implements Serializable {
 
     private Long id;
