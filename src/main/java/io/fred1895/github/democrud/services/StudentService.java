@@ -30,7 +30,7 @@ public class StudentService {
 
     public List<StudentDto> getAllStudents() {
         List<Student> students = repository.findAll();
-        return students.stream().map(StudentDto::new).collect(toList());
+        return listToDto(students);
     }
 
     public Student fromDto(StudentDto studentDto) {
@@ -40,6 +40,10 @@ public class StudentService {
         student.setIdade(studentDto.getIdade());
 
         return student;
+    }
+
+    public List<StudentDto> listToDto(List<Student> students) {
+        return students.stream().map(StudentDto::new).collect(toList());
     }
 
 
