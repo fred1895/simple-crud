@@ -7,6 +7,11 @@ import io.fred1895.github.democrud.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
+
 @Service
 public class StudentService {
 
@@ -21,6 +26,11 @@ public class StudentService {
         Student student = fromDto(studentDto);
         student.setCourse(course);
         repository.save(student);
+    }
+
+    public List<StudentDto> getAllStudents() {
+        List<Student> students = repository.findAll();
+        return students.stream().map(StudentDto::new).collect(toList());
     }
 
     public Student fromDto(StudentDto studentDto) {
