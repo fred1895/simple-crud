@@ -1,13 +1,12 @@
 package io.fred1895.github.democrud.domains;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Data
@@ -24,5 +23,5 @@ public class Course implements Serializable {
     private List<Teacher> teachers = new ArrayList<>();
 
     @OneToMany(mappedBy = "course")
-    private Set<Student> students = new HashSet<>();
+    private List<Student> students = new ArrayList<>();
 }

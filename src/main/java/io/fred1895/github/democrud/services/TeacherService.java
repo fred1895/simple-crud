@@ -29,7 +29,7 @@ public class TeacherService {
         teacherRepository.save(teacher);
     }
 
-    public List<TeacherDto> getTeacher() {
+    public List<TeacherDto> getTeachers() {
         List<Teacher> teacherList = teacherRepository.findAll();
         return teacherList.stream().map(TeacherDto::new).collect(toList());
     }

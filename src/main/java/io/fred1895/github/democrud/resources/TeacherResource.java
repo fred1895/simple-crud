@@ -30,7 +30,7 @@ public class TeacherResource {
 
     @GetMapping
     public ResponseEntity<List<TeacherDto>> getAllClients() {
-        List<TeacherDto> teachers = teacherService.getTeacher();
+        List<TeacherDto> teachers = teacherService.getTeachers();
         return ResponseEntity.ok().body(teachers);
     }
 }

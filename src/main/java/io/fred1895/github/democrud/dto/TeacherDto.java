@@ -21,6 +21,6 @@ public class TeacherDto implements Serializable {
         this.id = teacher.getId();
         this.nome = teacher.getNome();
         this.cpf = teacher.getCpf();
-        this.idCurso = teacher.getId();
+        this.idCurso = teacher.getCourse().getId();
     }
 }
