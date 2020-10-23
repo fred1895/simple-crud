@@ -16,6 +16,7 @@ public class Student implements Serializable {
     private String idade;
     private String email;
 
-    @OneToMany(mappedBy = "students")
+    @ManyToOne
+    @JoinColumn(name = "student_id")
     private Course course;
 }

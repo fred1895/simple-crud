@@ -1,4 +1,4 @@
-package io.fred1895.github.democrud.resources.exceptions;
+package io.fred1895.github.democrud.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +19,8 @@ public class ApplicationControllerAdvice {
         return ResponseEntity.status(httpStatusCode).body(apiErrors);
     }
 
-    @ExceptionHandler(TeacherNotFoundException.class)
-    public ResponseEntity<ApiErrors> handleTeacherNotFoundException(TeacherNotFoundException e) {
+    @ExceptionHandler(ObjectNotFoundException.class)
+    public ResponseEntity<ApiErrors> handleTeacherNotFoundException(ObjectNotFoundException e) {
         String msg = e.getMessage();
         ApiErrors apiErrors = new ApiErrors(HttpStatus.NOT_FOUND.value(), System.currentTimeMillis(), Arrays.asList(msg));
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiErrors);

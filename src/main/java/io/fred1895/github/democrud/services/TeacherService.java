@@ -1,7 +1,9 @@
 package io.fred1895.github.democrud.services;
 
+import io.fred1895.github.democrud.domains.Course;
 import io.fred1895.github.democrud.domains.Teacher;
-import io.fred1895.github.democrud.resources.exceptions.TeacherNotFoundException;
+import io.fred1895.github.democrud.dto.TeacherDto;
+import io.fred1895.github.democrud.exceptions.ObjectNotFoundException;
 import io.fred1895.github.democrud.repositories.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,36 +11,41 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import static java.util.stream.Collectors.toList;
+
 @Service
 public class TeacherService {
 
     @Autowired
     private TeacherRepository teacherRepository;
 
-    public void saveClient(Teacher teacher) {
+    @Autowired
+    private CourseService courseService;
+
+    public void saveTeacher(TeacherDto teacherDto) {
+        Course course = courseService.findCourseById(teacherDto.getIdCurso());
+        Teacher teacher = teacherFromDto(teacherDto);
+        teacher.setCourse(course);
         teacherRepository.save(teacher);
     }
 
-    public List<Teacher> getClients() {
-        return teacherRepository.findAll();
+    public List<TeacherDto> getTeacher() {
+        List<Teacher> teacherList = teacherRepository.findAll();
+        return teacherList.stream().map(TeacherDto::new).collect(toList());
     }
 
-    public Teacher findClientById(Long id) {
+    public TeacherDto findTeacherById(Long id) {
         Optional<Teacher> clientOptional = teacherRepository.findById(id);
-        return clientOptional.orElseThrow(() -> new TeacherNotFoundException("Cliente com id: " + id + " não encontrado"));
+        Teacher teacher = clientOptional.
+                orElseThrow(() -> new ObjectNotFoundException("Cliente com id: " + id + " não encontrado"));
+        return new TeacherDto(teacher);
     }
 
-    public void deleteClientById(Long id) {
-        teacherRepository.deleteById(id);
-    }
+    public Teacher teacherFromDto(TeacherDto teacherDto) {
+        Teacher teacher = new Teacher();
+        teacher.setNome(teacherDto.getNome());
+        teacher.setCpf(teacherDto.getCpf());
 
-    public void update(Long id, Teacher newTeacher) {
-        teacherRepository.findById(id)
-                .map(teacher -> {
-                    teacher.setCpf(newTeacher.getCpf());
-                    teacher.setNome(newTeacher.getNome());
-                    return teacherRepository.save(teacher);
-                })
-                .orElseThrow(() -> new TeacherNotFoundException("Objeto nao encontrado"));
+        return teacher;
     }
 }
