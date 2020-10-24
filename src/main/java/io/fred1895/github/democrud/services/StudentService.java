@@ -3,6 +3,7 @@ package io.fred1895.github.democrud.services;
 import io.fred1895.github.democrud.domains.Course;
 import io.fred1895.github.democrud.domains.Student;
 import io.fred1895.github.democrud.dto.StudentDto;
+import io.fred1895.github.democrud.exceptions.ObjectNotFoundException;
 import io.fred1895.github.democrud.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,16 @@ public class StudentService {
 
     @Autowired
     private CourseService courseService;
+
+    public Student getStudentById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Estudante não encontrado"));
+    }
+
+    public StudentDto getStudentDtoById(Long id) {
+        Student student = getStudentById(id);
+        return toDto(student);
+    }
 
     public void saveStudent(StudentDto studentDto) {
         Course course = courseService.findCourseById(studentDto.getIdCurso());
@@ -44,6 +55,10 @@ public class StudentService {
         student.setIdade(studentDto.getIdade());
 
         return student;
+    }
+
+    public StudentDto toDto(Student student) {
+        return new StudentDto(student);
     }
 
     public List<StudentDto> listToDto(List<Student> students) {

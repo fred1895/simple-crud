@@ -23,7 +23,8 @@ public class CourseService {
     private TeacherService teacherService;
 
     public Course findCourseById(Long id) {
-        return repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Curso não encontrado"));
+        return repository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Curso não encontrado"));
     }
 
     public void saveNewCourse(CourseDto courseDto) {
@@ -47,6 +48,10 @@ public class CourseService {
         course.setDescricao(courseDto.getDescricao());
 
         return course;
+    }
+
+    public CourseDto toDto(Course course) {
+        return new CourseDto(course);
     }
 
     public List<CourseDto> listToDto(List<Course> courses) {
