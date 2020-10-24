@@ -37,7 +37,7 @@ public class CourseService {
 
     public List<CourseDto> getAllCoursesDto() {
         List<Course> courses = getAllCourses();
-        return courses.stream().map(CourseDto::new).collect(toList());
+        return listToDto(courses);
 
     }
 
@@ -47,6 +47,10 @@ public class CourseService {
         course.setDescricao(courseDto.getDescricao());
 
         return course;
+    }
+
+    public List<CourseDto> listToDto(List<Course> courses) {
+        return courses.stream().map(CourseDto::new).collect(toList());
     }
 
     public List<TeacherDto> getTeacherFromCourse(Long id) {

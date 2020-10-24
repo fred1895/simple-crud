@@ -31,7 +31,7 @@ public class TeacherService {
 
     public List<TeacherDto> getTeachers() {
         List<Teacher> teacherList = teacherRepository.findAll();
-        return teacherList.stream().map(TeacherDto::new).collect(toList());
+        return listToDto(teacherList);
     }
 
     public TeacherDto findTeacherById(Long id) {
@@ -47,5 +47,9 @@ public class TeacherService {
         teacher.setCpf(teacherDto.getCpf());
 
         return teacher;
+    }
+
+    public List<TeacherDto> listToDto(List<Teacher> teachers) {
+        return teachers.stream().map(TeacherDto::new).collect(toList());
     }
 }
