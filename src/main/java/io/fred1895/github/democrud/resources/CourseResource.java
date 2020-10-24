@@ -23,6 +23,12 @@ public class CourseResource {
         service.saveNewCourse(course);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CourseDto> getCourseById(@PathVariable Long id) {
+        CourseDto courseDto = service.getCourseDtoById(id);
+        return ResponseEntity.ok().body(courseDto);
+    }
+
     @GetMapping("/lista")
     public ResponseEntity<List<CourseDto>> getCourses() {
         List<CourseDto> allCourses = service.getAllCoursesDto();

@@ -27,6 +27,11 @@ public class CourseService {
                 .orElseThrow(() -> new ObjectNotFoundException("Curso não encontrado"));
     }
 
+    public CourseDto getCourseDtoById(Long id) {
+        Course course = findCourseById(id);
+        return toDto(course);
+    }
+
     public void saveNewCourse(CourseDto courseDto) {
         Course course = courseFromDto(courseDto);
         repository.save(course);

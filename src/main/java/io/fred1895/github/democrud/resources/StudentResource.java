@@ -1,6 +1,5 @@
 package io.fred1895.github.democrud.resources;
 
-import io.fred1895.github.democrud.domains.Student;
 import io.fred1895.github.democrud.dto.StudentDto;
 import io.fred1895.github.democrud.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
