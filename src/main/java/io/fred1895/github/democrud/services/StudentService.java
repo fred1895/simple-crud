@@ -28,8 +28,12 @@ public class StudentService {
         repository.save(student);
     }
 
-    public List<StudentDto> getAllStudents() {
-        List<Student> students = repository.findAll();
+    public List<Student> getAllStudents() {
+        return repository.findAll();
+    }
+
+    public List<StudentDto> getAllStudentsDto() {
+        List<Student> students = getAllStudents();
         return listToDto(students);
     }
 

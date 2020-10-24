@@ -23,6 +23,6 @@ public class StudentResource {
 
     @GetMapping("/lista")
     public List<StudentDto> getStudents() {
-        return studentService.getAllStudents();
+        return studentService.getAllStudentsDto();
     }
 }

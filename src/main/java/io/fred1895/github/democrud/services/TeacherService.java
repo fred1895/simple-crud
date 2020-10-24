@@ -17,7 +17,7 @@ import static java.util.stream.Collectors.toList;
 public class TeacherService {
 
     @Autowired
-    private TeacherRepository teacherRepository;
+    private TeacherRepository repository;
 
     @Autowired
     private CourseService courseService;
@@ -26,16 +26,20 @@ public class TeacherService {
         Course course = courseService.findCourseById(teacherDto.getIdCurso());
         Teacher teacher = teacherFromDto(teacherDto);
         teacher.setCourse(course);
-        teacherRepository.save(teacher);
+        repository.save(teacher);
     }
 
-    public List<TeacherDto> getTeachers() {
-        List<Teacher> teacherList = teacherRepository.findAll();
+    public List<Teacher> getAllTeachers() {
+        return repository.findAll();
+    }
+
+    public List<TeacherDto> getAllTeachersDto() {
+        List<Teacher> teacherList = getAllTeachers();
         return listToDto(teacherList);
     }
 
     public TeacherDto findTeacherById(Long id) {
-        Optional<Teacher> clientOptional = teacherRepository.findById(id);
+        Optional<Teacher> clientOptional = repository.findById(id);
         Teacher teacher = clientOptional.
                 orElseThrow(() -> new ObjectNotFoundException("Cliente com id: " + id + " não encontrado"));
         return new TeacherDto(teacher);
