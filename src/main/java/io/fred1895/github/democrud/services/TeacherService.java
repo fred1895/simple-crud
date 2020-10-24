@@ -29,6 +29,16 @@ public class TeacherService {
         repository.save(teacher);
     }
 
+    public Teacher findTeacherById(Long id) {
+        return repository.findById(id)
+                .orElseThrow( () -> new ObjectNotFoundException("Professor não encontrado") );
+    }
+
+    public TeacherDto findTeacherDtoById(Long id) {
+        Teacher teacher = findTeacherById(id);
+        return toDto(teacher);
+    }
+
     public List<Teacher> getAllTeachers() {
         return repository.findAll();
     }
@@ -38,19 +48,16 @@ public class TeacherService {
         return listToDto(teacherList);
     }
 
-    public TeacherDto findTeacherById(Long id) {
-        Optional<Teacher> clientOptional = repository.findById(id);
-        Teacher teacher = clientOptional.
-                orElseThrow(() -> new ObjectNotFoundException("Cliente com id: " + id + " não encontrado"));
-        return new TeacherDto(teacher);
-    }
-
     public Teacher teacherFromDto(TeacherDto teacherDto) {
         Teacher teacher = new Teacher();
         teacher.setNome(teacherDto.getNome());
         teacher.setCpf(teacherDto.getCpf());
 
         return teacher;
+    }
+
+    public TeacherDto toDto(Teacher teacher) {
+        return new TeacherDto(teacher);
     }
 
     public List<TeacherDto> listToDto(List<Teacher> teachers) {

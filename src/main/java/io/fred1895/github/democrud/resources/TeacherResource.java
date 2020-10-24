@@ -24,8 +24,8 @@ public class TeacherResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<TeacherDto> findById(@PathVariable Long id) {
-        TeacherDto teacher = teacherService.findTeacherById(id);
-        return ResponseEntity.ok().body(teacher);
+        TeacherDto teacherDto = teacherService.findTeacherDtoById(id);
+        return ResponseEntity.ok().body(teacherDto);
     }
 
     @GetMapping
