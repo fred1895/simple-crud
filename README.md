@@ -19,21 +19,29 @@ Imagine se cada um resolvesse fazer uma aplicação com suas próprias regras? Q
 como as aplicações são feitas. Obs: Não confunda com Design Patterns.</br>
 Neste padrão a aplicação back-end fica dividida em camadas, como exemplificado na imagem abaixo:
 <img align="center" alt="Padrao MVC" src="doc/imgs/padrao_mvc.png?raw=true" />
-#Menu
+## Menu
 * [Camada de domínio](#camada-de-dominio)
 * [Camada de acesso a dados](#camada-de-acesso-a-dados)
-* Camada de serviço
-* Controladores REST
+* [Camada de serviço](#camada-de-servico)
+* Controladores REST[#controladores-rest]
 
 ### Camada de dominio 
-Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio.
+Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus laoreet nisl at finibus. Vivamus convallis aliquet diam et eleifend. Fusce ut euismod magna, sed dapibus nunc. Fusce iaculis, nulla eget ullamcorper posuere, nisl ligula malesuada erat, at lacinia mauris massa ut neque. Nulla vitae risus at urna volutpat finibus ut nec magna. Nulla sit amet lorem porttitor, mollis libero eu, porttitor turpis. Nullam sit amet nisi eu velit egestas volutpat ac ac sem. Aliquam egestas, justo a lacinia tempus, felis turpis venenatis nunc, a varius velit mauris id ante. Suspendisse nisl magna, vulputate id risus rhoncus, congue varius tellus. Sed pellentesque quam sed nunc tristique commodo. Cras non est risus. Vestibulum nec nulla vitae ipsum interdum pellentesque.
 
 ### Camada de acesso a dados 
 Camada onde estará a classe(interface) responsavel por fazer a conexão direta com o banco de dados 
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus laoreet nisl at finibus. Vivamus convallis aliquet diam et eleifend. Fusce ut euismod magna, sed dapibus nunc. Fusce iaculis, nulla eget ullamcorper posuere, nisl ligula malesuada erat, at lacinia mauris massa ut neque. Nulla vitae risus at urna volutpat finibus ut nec magna. Nulla sit amet lorem porttitor, mollis libero eu, porttitor turpis. Nullam sit amet nisi eu velit egestas volutpat ac ac sem. Aliquam egestas, justo a lacinia tempus, felis turpis venenatis nunc, a varius velit mauris id ante. Suspendisse nisl magna, vulputate id risus rhoncus, congue varius tellus. Sed pellentesque quam sed nunc tristique commodo. Cras non est risus. Vestibulum nec nulla vitae ipsum interdum pellentesque.
+
 ### Camada de servico 
 Camada que aplicará todas as regras de negócio 
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus laoreet nisl at finibus. Vivamus convallis aliquet diam et eleifend. Fusce ut euismod magna, sed dapibus nunc. Fusce iaculis, nulla eget ullamcorper posuere, nisl ligula malesuada erat, at lacinia mauris massa ut neque. Nulla vitae risus at urna volutpat finibus ut nec magna. Nulla sit amet lorem porttitor, mollis libero eu, porttitor turpis. Nullam sit amet nisi eu velit egestas volutpat ac ac sem. Aliquam egestas, justo a lacinia tempus, felis turpis venenatis nunc, a varius velit mauris id ante. Suspendisse nisl magna, vulputate id risus rhoncus, congue varius tellus. Sed pellentesque quam sed nunc tristique commodo. Cras non est risus. Vestibulum nec nulla vitae ipsum interdum pellentesque.
+
 ### Controladores REST
 Camada que expões os endpoints necessários para a aplicação cliente fazer as requisições HTTP necessárias
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus laoreet nisl at finibus. Vivamus convallis aliquet diam et eleifend. Fusce ut euismod magna, sed dapibus nunc. Fusce iaculis, nulla eget ullamcorper posuere, nisl ligula malesuada erat, at lacinia mauris massa ut neque. Nulla vitae risus at urna volutpat finibus ut nec magna. Nulla sit amet lorem porttitor, mollis libero eu, porttitor turpis. Nullam sit amet nisi eu velit egestas volutpat ac ac sem. Aliquam egestas, justo a lacinia tempus, felis turpis venenatis nunc, a varius velit mauris id ante. Suspendisse nisl magna, vulputate id risus rhoncus, congue varius tellus. Sed pellentesque quam sed nunc tristique commodo. Cras non est risus. Vestibulum nec nulla vitae ipsum interdum pellentesque.
 
