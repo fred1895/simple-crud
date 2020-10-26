@@ -1,4 +1,4 @@
-package model.domains;
+package io.fred1895.github.democrud.model.domains;
 
 import lombok.*;
 

@@ -1,6 +1,6 @@
-package model.dto;
+package io.fred1895.github.democrud.model.dto;
 
-import model.domains.Course;
+import io.fred1895.github.democrud.model.domains.Course;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

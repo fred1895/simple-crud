@@ -1,7 +1,7 @@
 package io.fred1895.github.democrud;
 
-import model.dto.CourseDto;
-import model.services.CourseService;
+import io.fred1895.github.democrud.model.dto.CourseDto;
+import io.fred1895.github.democrud.model.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,7 +1,7 @@
-package model.dto;
+package io.fred1895.github.democrud.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import model.domains.Teacher;
+import io.fred1895.github.democrud.model.domains.Teacher;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
