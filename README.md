@@ -20,5 +20,5 @@ como as aplicações são feitas. Obs: Não confunda com Design Patterns.</br>
 Neste padrão a aplicação back-end fica dividida em camadas, como exemplificado na imagem abaixo:
 <img align="center" alt="Padrao MVC" src="doc/imgs/padrao_mvc.png?raw=true" />
 
-
-
+| Camada de domínio | Camada de acesso a dados (Repository) | Camada de serviço | Controladores REST
+| Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio | Camada onde estará a classe(interface) responsavel por fazer a conexão direta com o banco de dados | Camada que aplicará todas as regras de negócio | Camada que expões os endpoints necessários para a aplicação cliente fazer as requisições HTTP necessárias
