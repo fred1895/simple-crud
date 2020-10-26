@@ -23,7 +23,7 @@ Neste padrão a aplicação back-end fica dividida em camadas, como exemplificad
 * [Camada de domínio](#camada-de-dominio)
 * [Camada de acesso a dados](#camada-de-acesso-a-dados)
 * [Camada de serviço](#camada-de-servico)
-* Controladores REST[#controladores-rest]
+* [Controladores REST](#controladores-rest)
 
 ### Camada de dominio 
 Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio. 
