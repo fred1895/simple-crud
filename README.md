@@ -19,16 +19,21 @@ Imagine se cada um resolvesse fazer uma aplicação com suas próprias regras? Q
 como as aplicações são feitas. Obs: Não confunda com Design Patterns.</br>
 Neste padrão a aplicação back-end fica dividida em camadas, como exemplificado na imagem abaixo:
 <img align="center" alt="Padrao MVC" src="doc/imgs/padrao_mvc.png?raw=true" />
+#Menu
+* [Camada de domínio](#camada-de-dominio)
+* [Camada de acesso a dados](#camada-de-acesso-a-dados)
+* Camada de serviço
+* Controladores REST
 
-### Camada de domínio 
+### Camada de dominio 
 Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio.
 
-## Camada de acesso a dados (Repository) 
+### Camada de acesso a dados 
 Camada onde estará a classe(interface) responsavel por fazer a conexão direta com o banco de dados 
 
-## Camada de serviço 
+### Camada de servico 
 Camada que aplicará todas as regras de negócio 
 
-## Controladores REST
+### Controladores REST
 Camada que expões os endpoints necessários para a aplicação cliente fazer as requisições HTTP necessárias
 
