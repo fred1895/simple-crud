@@ -48,6 +48,23 @@ public class TeacherService {
         return listToDto(teacherList);
     }
 
+    public void updateTeacher(Long id, TeacherDto newTeacherDto) {
+        Teacher teacher = findTeacherById(id);
+        updateData(teacher, newTeacherDto);
+
+        repository.save(teacher);
+    }
+
+    private void updateData(Teacher teacher, TeacherDto newTeacherDto) {
+        if (newTeacherDto.getNome() != null) teacher.setNome(newTeacherDto.getNome());
+        if (newTeacherDto.getCpf() != null) teacher.setCpf(newTeacherDto.getCpf());
+    }
+
+    public void deleteTeacher(Long id) {
+        Teacher teacher = findTeacherById(id);
+        repository.delete(teacher);
+    }
+
     public Teacher teacherFromDto(TeacherDto teacherDto) {
         Teacher teacher = new Teacher();
         teacher.setNome(teacherDto.getNome());
@@ -62,18 +79,5 @@ public class TeacherService {
 
     public List<TeacherDto> listToDto(List<Teacher> teachers) {
         return teachers.stream().map(TeacherDto::new).collect(toList());
-    }
-
-    public void updateTeacher(Long id, Teacher newTeacher) {
-        Teacher teacher = findTeacherById(id);
-        if (newTeacher.getNome() != null) teacher.setNome(newTeacher.getNome());
-        if (newTeacher.getCpf() != null) teacher.setCpf(newTeacher.getCpf());
-
-        repository.save(teacher);
-    }
-
-    public void deleteTeacher(Long id) {
-        Teacher teacher = findTeacherById(id);
-        repository.delete(teacher);
     }
 }
