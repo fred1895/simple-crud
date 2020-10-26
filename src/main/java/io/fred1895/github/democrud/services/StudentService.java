@@ -48,6 +48,20 @@ public class StudentService {
         return listToDto(students);
     }
 
+
+    public void updateStudent(Long id, StudentDto newStudentDto) {
+        Student student = getStudentById(id);
+        updateData(student, newStudentDto);
+
+        repository.save(student);
+    }
+
+    private void updateData(Student student, StudentDto newStudentDto) {
+        if (newStudentDto.getNome() != null) student.setNome(newStudentDto.getNome());
+        if (newStudentDto.getEmail() != null) student.setEmail(newStudentDto.getEmail());
+        if (newStudentDto.getIdade() != null) student.setIdade(newStudentDto.getIdade());
+    }
+
     public Student fromDto(StudentDto studentDto) {
         Student student = new Student();
         student.setNome(studentDto.getNome());
@@ -57,6 +71,11 @@ public class StudentService {
         return student;
     }
 
+    public void deleteStudent(Long id) {
+        Student student = getStudentById(id);
+        repository.delete(student);
+    }
+
     public StudentDto toDto(Student student) {
         return new StudentDto(student);
     }
@@ -64,7 +83,4 @@ public class StudentService {
     public List<StudentDto> listToDto(List<Student> students) {
         return students.stream().map(StudentDto::new).collect(toList());
     }
-
-
-
 }

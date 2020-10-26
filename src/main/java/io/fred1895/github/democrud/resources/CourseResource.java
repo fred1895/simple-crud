@@ -29,7 +29,7 @@ public class CourseResource {
         return ResponseEntity.ok().body(courseDto);
     }
 
-    @GetMapping("/lista")
+    @GetMapping
     public ResponseEntity<List<CourseDto>> getCourses() {
         List<CourseDto> allCourses = service.getAllCoursesDto();
         return ResponseEntity.ok().body(allCourses);

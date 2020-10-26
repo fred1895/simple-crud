@@ -37,7 +37,7 @@ public class TeacherResource {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@PathVariable Long id ,@RequestBody Teacher newTeacher) {
+    public void update(@PathVariable Long id, @RequestBody Teacher newTeacher) {
         teacherService.updateTeacher(id, newTeacher);
     }
 
@@ -46,6 +46,5 @@ public class TeacherResource {
     public void delete(@PathVariable Long id) {
         teacherService.deleteTeacher(id);
     }
-
 
 }

@@ -28,8 +28,20 @@ public class StudentResource {
         studentService.saveStudent(studentDto);
     }
 
-    @GetMapping("/lista")
+    @GetMapping
     public List<StudentDto> getStudents() {
         return studentService.getAllStudentsDto();
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@PathVariable Long id, @RequestBody StudentDto newStudentDto) {
+        studentService.updateStudent(id, newStudentDto);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        studentService.deleteStudent(id);
     }
 }
