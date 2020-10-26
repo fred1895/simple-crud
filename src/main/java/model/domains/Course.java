@@ -1,4 +1,4 @@
-package io.fred1895.github.democrud.domains;
+package model.domains;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

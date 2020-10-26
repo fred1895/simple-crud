@@ -1,6 +1,6 @@
-package io.fred1895.github.democrud.repositories;
+package model.repositories;
 
-import io.fred1895.github.democrud.domains.Teacher;
+import model.domains.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TeacherRepository extends JpaRepository<Teacher, Long> {

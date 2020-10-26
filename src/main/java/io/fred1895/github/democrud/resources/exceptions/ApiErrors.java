@@ -1,4 +1,4 @@
-package io.fred1895.github.democrud.exceptions;
+package io.fred1895.github.democrud.resources.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,5 +1,7 @@
-package io.fred1895.github.democrud.exceptions;
+package io.fred1895.github.democrud.resources;
 
+import io.fred1895.github.democrud.resources.exceptions.ApiErrors;
+import io.fred1895.github.democrud.resources.exceptions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

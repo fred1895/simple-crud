@@ -1,15 +1,14 @@
-package io.fred1895.github.democrud.services;
+package model.services;
 
-import io.fred1895.github.democrud.domains.Course;
-import io.fred1895.github.democrud.domains.Student;
-import io.fred1895.github.democrud.dto.StudentDto;
-import io.fred1895.github.democrud.exceptions.ObjectNotFoundException;
-import io.fred1895.github.democrud.repositories.StudentRepository;
+import model.domains.Course;
+import model.domains.Student;
+import model.dto.StudentDto;
+import io.fred1895.github.democrud.resources.exceptions.ObjectNotFoundException;
+import model.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 

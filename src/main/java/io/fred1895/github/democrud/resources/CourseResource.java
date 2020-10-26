@@ -1,9 +1,9 @@
 package io.fred1895.github.democrud.resources;
 
-import io.fred1895.github.democrud.dto.CourseDto;
-import io.fred1895.github.democrud.dto.StudentDto;
-import io.fred1895.github.democrud.dto.TeacherDto;
-import io.fred1895.github.democrud.services.CourseService;
+import model.dto.CourseDto;
+import model.dto.StudentDto;
+import model.dto.TeacherDto;
+import model.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,6 +53,6 @@ public class CourseResource {
     public void update(@PathVariable Long id, @RequestBody CourseDto courseDto) {
         service.updateCourse(id, courseDto);
     }
-    
+
 
 }

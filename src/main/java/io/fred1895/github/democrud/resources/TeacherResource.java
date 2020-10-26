@@ -1,8 +1,7 @@
 package io.fred1895.github.democrud.resources;
 
-import io.fred1895.github.democrud.domains.Teacher;
-import io.fred1895.github.democrud.dto.TeacherDto;
-import io.fred1895.github.democrud.services.TeacherService;
+import model.dto.TeacherDto;
+import model.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
