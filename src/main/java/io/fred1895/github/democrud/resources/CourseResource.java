@@ -48,4 +48,11 @@ public class CourseResource {
         return ResponseEntity.ok(students);
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@PathVariable Long id, @RequestBody CourseDto courseDto) {
+        service.updateCourse(id, courseDto);
+    }
+    
+
 }

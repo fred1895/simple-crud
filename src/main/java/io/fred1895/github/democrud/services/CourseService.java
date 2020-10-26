@@ -64,6 +64,18 @@ public class CourseService {
         return teacherService.listToDto(teachers);
     }
 
+    public void updateCourse(Long id, CourseDto newCourseDto) {
+        Course course = findCourseById(id);
+        updateData(course, newCourseDto);
+
+        repository.save(course);
+    }
+
+    private void updateData(Course course, CourseDto newCourseDto) {
+        if (newCourseDto.getDisciplina() != null) course.setDisciplina(newCourseDto.getDisciplina());
+        if (newCourseDto.getDescricao() != null) course.setDescricao(newCourseDto.getDescricao());
+    }
+
     public Course courseFromDto(CourseDto courseDto) {
         Course course = new Course();
         course.setDisciplina(courseDto.getDisciplina());
