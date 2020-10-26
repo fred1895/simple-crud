@@ -1,5 +1,6 @@
 package io.fred1895.github.democrud.resources;
 
+import io.fred1895.github.democrud.domains.Teacher;
 import io.fred1895.github.democrud.dto.TeacherDto;
 import io.fred1895.github.democrud.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +34,18 @@ public class TeacherResource {
         List<TeacherDto> teachers = teacherService.getAllTeachersDto();
         return ResponseEntity.ok().body(teachers);
     }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@PathVariable Long id ,@RequestBody Teacher newTeacher) {
+        teacherService.updateTeacher(id, newTeacher);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        teacherService.deleteTeacher(id);
+    }
+
+
 }
