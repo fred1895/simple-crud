@@ -4,13 +4,13 @@ Este repositório foi criado para aquele que querem um exemplo bem básico de um
 
 ## O QUE É UM CRUD?
 CRUD são as quatro operações básicas utilizadas em bases de dados relacionais fornecidas aos utilizadores do sistema. Abreviação de:  
-  *Create*: Ação de criar algo novo no banco de dados.
-  </br>
-    *READ*: Ação de ler algum dado já existente no banco de dados.
-    </br>
-      *UPDATE*: Ação de atualizar algum dado/informação vinda do banco de dados 
-      </br>
-        *DELETE*: Acão de deletar algum dado/informação já existente no banco de dados.
-        </br>
+*__Create__*: Ação de criar algo novo no banco de dados.
+</br>
+*__Read__*: Ação de ler algum dado já existente no banco de dados.
+</br>
+*__Update__*: Ação de atualizar algum dado/informação vinda do banco de dados 
+</br>
+*__Delete__*: Acão de deletar algum dado/informação já existente no banco de dados.
+</br>
 
 
