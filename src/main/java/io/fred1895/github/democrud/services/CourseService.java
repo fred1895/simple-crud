@@ -1,8 +1,10 @@
 package io.fred1895.github.democrud.services;
 
 import io.fred1895.github.democrud.domains.Course;
+import io.fred1895.github.democrud.domains.Student;
 import io.fred1895.github.democrud.domains.Teacher;
 import io.fred1895.github.democrud.dto.CourseDto;
+import io.fred1895.github.democrud.dto.StudentDto;
 import io.fred1895.github.democrud.dto.TeacherDto;
 import io.fred1895.github.democrud.exceptions.ObjectNotFoundException;
 import io.fred1895.github.democrud.repositories.CourseRepository;
@@ -21,6 +23,9 @@ public class CourseService {
 
     @Autowired
     private TeacherService teacherService;
+
+    @Autowired
+    private StudentService studentService;
 
     public Course findCourseById(Long id) {
         return repository.findById(id)
@@ -47,6 +52,18 @@ public class CourseService {
 
     }
 
+    public List<StudentDto> getStudentsFromCourse(Long id) {
+        Course course = findCourseById(id);
+        List<Student> students = course.getStudents();
+        return studentService.listToDto(students);
+    }
+
+    public List<TeacherDto> getTeacherFromCourse(Long id) {
+        Course course = findCourseById(id);
+        List<Teacher> teachers = course.getTeachers();
+        return teacherService.listToDto(teachers);
+    }
+
     public Course courseFromDto(CourseDto courseDto) {
         Course course = new Course();
         course.setDisciplina(courseDto.getDisciplina());
@@ -61,11 +78,5 @@ public class CourseService {
 
     public List<CourseDto> listToDto(List<Course> courses) {
         return courses.stream().map(CourseDto::new).collect(toList());
-    }
-
-    public List<TeacherDto> getTeacherFromCourse(Long id) {
-        Course course = findCourseById(id);
-        List<Teacher> teachers = course.getTeachers();
-        return teachers.stream().map(TeacherDto::new).collect(toList());
     }
 }

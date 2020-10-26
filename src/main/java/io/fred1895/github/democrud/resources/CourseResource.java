@@ -1,6 +1,7 @@
 package io.fred1895.github.democrud.resources;
 
 import io.fred1895.github.democrud.dto.CourseDto;
+import io.fred1895.github.democrud.dto.StudentDto;
 import io.fred1895.github.democrud.dto.TeacherDto;
 import io.fred1895.github.democrud.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,12 @@ public class CourseResource {
     public ResponseEntity<List<TeacherDto>> getTeachers(@PathVariable Long id) {
         List<TeacherDto> teachers = service.getTeacherFromCourse(id);
         return ResponseEntity.ok().body(teachers);
+    }
+
+    @GetMapping("/{id}/estudantes")
+    public ResponseEntity<List<StudentDto>> getStudents(@PathVariable Long id) {
+        List<StudentDto> students = service.getStudentsFromCourse(id);
+        return ResponseEntity.ok(students);
     }
 
 }
