@@ -28,7 +28,7 @@ Neste padrão a aplicação back-end fica dividida em camadas, como exemplificad
 ### Camada de dominio 
 Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus laoreet nisl at finibus. Vivamus convallis aliquet diam et eleifend. Fusce ut euismod magna, sed dapibus nunc. Fusce iaculis, nulla eget ullamcorper posuere, nisl ligula malesuada erat, at lacinia mauris massa ut neque. Nulla vitae risus at urna volutpat finibus ut nec magna. Nulla sit amet lorem porttitor, mollis libero eu, porttitor turpis. Nullam sit amet nisi eu velit egestas volutpat ac ac sem. Aliquam egestas, justo a lacinia tempus, felis turpis venenatis nunc, a varius velit mauris id ante. Suspendisse nisl magna, vulputate id risus rhoncus, congue varius tellus. Sed pellentesque quam sed nunc tristique commodo. Cras non est risus. Vestibulum nec nulla vitae ipsum interdum pellentesque.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus laoreet nisl at finibus. Vivamus convallis aliquet diam et eleifend. Fusce ut euismod magna, sed dapibus nunc. Fusce iaculis, nulla eget ullamcorper posuere, nisl ligula malesuada erat, at lacinia mauris massa ut neque. Nulla vitae risus at urna volutpat finibus ut nec magna. Nulla sit amet lorem porttitor, mollis libero eu, porttitor turpis. Nullam sit amet nisi eu velit egestas volutpat ac ac sem. Aliquam egestas, justo a lacinia tempus, felis turpis venenatis nunc, a varius velit mauris id ante. Suspendisse nisl magna.
 
 ### Camada de acesso a dados 
 Camada onde estará a classe(interface) responsavel por fazer a conexão direta com o banco de dados 
