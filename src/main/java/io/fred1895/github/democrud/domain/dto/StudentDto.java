@@ -1,7 +1,7 @@
-package io.fred1895.github.democrud.student_management.dto;
+package io.fred1895.github.democrud.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.fred1895.github.democrud.student_management.entity.Student;
+import io.fred1895.github.democrud.domain.entities.Student;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

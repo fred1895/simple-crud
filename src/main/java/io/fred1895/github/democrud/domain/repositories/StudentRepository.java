@@ -1,7 +1,7 @@
-package io.fred1895.github.democrud.student_management.repositories;
+package io.fred1895.github.democrud.domain.repositories;
 
-import io.fred1895.github.democrud.student_management.dto.StudentDto;
-import io.fred1895.github.democrud.student_management.entity.Student;
+import io.fred1895.github.democrud.domain.dto.StudentDto;
+import io.fred1895.github.democrud.domain.entities.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,17 +1,18 @@
 package io.fred1895.github.democrud.student_management.repositories;
 
-import io.fred1895.github.democrud.course_management.entity.Course;
-import io.fred1895.github.democrud.course_management.repositories.CourseRepository;
+import io.fred1895.github.democrud.domain.entities.Course;
+import io.fred1895.github.democrud.domain.repositories.CourseRepository;
+import io.fred1895.github.democrud.domain.repositories.StudentRepository;
 import io.fred1895.github.democrud.resources.exceptions.ObjectNotFoundException;
-import io.fred1895.github.democrud.student_management.dto.StudentDto;
-import io.fred1895.github.democrud.student_management.entity.Student;
+import io.fred1895.github.democrud.domain.dto.StudentDto;
+import io.fred1895.github.democrud.domain.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 import static io.fred1895.github.democrud.student_management.utils.StudentUtil.*;
 
-public class StudentRepositoryImpl implements StudentRepository{
+public class StudentRepositoryImpl implements StudentRepository {
     @Autowired
     private StudentDAO dao;
 

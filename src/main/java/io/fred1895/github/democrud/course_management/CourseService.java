@@ -1,12 +1,12 @@
 package io.fred1895.github.democrud.course_management;
 
-import io.fred1895.github.democrud.course_management.entity.Course;
+import io.fred1895.github.democrud.domain.entities.Course;
 import io.fred1895.github.democrud.course_management.repositories.CourseDAO;
-import io.fred1895.github.democrud.student_management.entity.Student;
-import io.fred1895.github.democrud.teacher_management.entity.Teacher;
-import io.fred1895.github.democrud.course_management.dto.CourseDto;
-import io.fred1895.github.democrud.student_management.dto.StudentDto;
-import io.fred1895.github.democrud.teacher_management.dto.TeacherDto;
+import io.fred1895.github.democrud.domain.entities.Student;
+import io.fred1895.github.democrud.domain.entities.Teacher;
+import io.fred1895.github.democrud.domain.dto.CourseDto;
+import io.fred1895.github.democrud.domain.dto.StudentDto;
+import io.fred1895.github.democrud.domain.dto.TeacherDto;
 import io.fred1895.github.democrud.student_management.StudentService;
 import io.fred1895.github.democrud.teacher_management.TeacherService;
 import io.fred1895.github.democrud.resources.exceptions.ObjectNotFoundException;

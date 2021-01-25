@@ -1,7 +1,7 @@
-package io.fred1895.github.democrud.teacher_management.repositories;
+package io.fred1895.github.democrud.domain.repositories;
 
-import io.fred1895.github.democrud.teacher_management.dto.TeacherDto;
-import io.fred1895.github.democrud.teacher_management.entity.Teacher;
+import io.fred1895.github.democrud.domain.dto.TeacherDto;
+import io.fred1895.github.democrud.domain.entities.Teacher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

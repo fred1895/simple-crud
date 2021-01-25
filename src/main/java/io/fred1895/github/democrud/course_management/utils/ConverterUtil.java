@@ -1,7 +1,7 @@
 package io.fred1895.github.democrud.course_management.utils;
 
-import io.fred1895.github.democrud.course_management.entity.Course;
-import io.fred1895.github.democrud.course_management.dto.CourseDto;
+import io.fred1895.github.democrud.domain.entities.Course;
+import io.fred1895.github.democrud.domain.dto.CourseDto;
 
 import java.util.List;
 

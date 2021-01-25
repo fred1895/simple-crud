@@ -1,6 +1,6 @@
-package io.fred1895.github.democrud.teacher_management.entity;
+package io.fred1895.github.democrud.domain.entities;
 
-import io.fred1895.github.democrud.course_management.entity.Course;
+import io.fred1895.github.democrud.domain.entities.Course;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
