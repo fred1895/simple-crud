@@ -1,16 +1,16 @@
-package io.fred1895.github.democrud.student_management.repositories;
+package io.fred1895.github.democrud.infra;
 
 import io.fred1895.github.democrud.domain.entities.Course;
 import io.fred1895.github.democrud.domain.repositories.CourseRepository;
 import io.fred1895.github.democrud.domain.repositories.StudentRepository;
-import io.fred1895.github.democrud.resources.exceptions.ObjectNotFoundException;
+import io.fred1895.github.democrud.api.ObjectNotFoundException;
 import io.fred1895.github.democrud.domain.dto.StudentDto;
 import io.fred1895.github.democrud.domain.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-import static io.fred1895.github.democrud.student_management.utils.StudentUtil.*;
+import static io.fred1895.github.democrud.infra.StudentUtil.*;
 
 public class StudentRepositoryImpl implements StudentRepository {
     @Autowired

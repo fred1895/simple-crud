@@ -1,4 +1,4 @@
-package io.fred1895.github.democrud.teacher_management.utils;
+package io.fred1895.github.democrud.infra;
 
 import io.fred1895.github.democrud.domain.dto.TeacherDto;
 import io.fred1895.github.democrud.domain.entities.Teacher;

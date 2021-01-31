@@ -1,4 +1,4 @@
-package io.fred1895.github.democrud.course_management.repositories;
+package io.fred1895.github.democrud.infra;
 
 import io.fred1895.github.democrud.domain.entities.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
