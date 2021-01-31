@@ -1,4 +1,4 @@
-package io.fred1895.github.democrud.teacher_management.controller;
+package io.fred1895.github.democrud.api.controllers;
 
 import io.fred1895.github.democrud.domain.dto.TeacherDto;
 import io.fred1895.github.democrud.domain.repositories.TeacherRepository;
