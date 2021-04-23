@@ -19,6 +19,9 @@ Imagine se cada um resolvesse fazer uma aplicação com suas próprias regras? Q
 como as aplicações são feitas. Obs: Não confunda com Design Patterns.</br>
 Neste padrão a aplicação back-end fica dividida em camadas, como exemplificado na imagem abaixo:
 <img align="center" alt="Padrao MVC" src="doc/imgs/padrao_mvc.png?raw=true" />
+</br>
+Toda aplicação possui uma regra de negócio, ou seja, um objetivo. O CRUD facilita o acesso e fornecimento aos dados dessa regra. No exemplo deste repositório, simulei uma aplicação de um curso onde se cadastra estudantes, professores e cursos. Veja abaixo como ficou dividida essa regra de negócio no padrão MVC.
+</br>
 ## Menu
 * [Camada de domínio](#camada-de-dominio)
 * [Camada de acesso a dados](#camada-de-acesso-a-dados)
@@ -26,17 +29,23 @@ Neste padrão a aplicação back-end fica dividida em camadas, como exemplificad
 * [Controladores REST](#controladores-rest)
 
 ### Camada de dominio 
-Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio.</br>
-Aqui é usada o menos possível de tecnologia possível!
+Camada onde estarão as entidades e outras classes responsáveis pela implementação do negócio, simulando a realidade.</br>
+Ex: Na minha regra de negócio precisarei de 3 entidades: Curso, Professor e Estudantes. Elas estão simuladas em classes com seus respectivos atrubutos: https://github.com/fred1895/simple-crud/tree/master/src/main/java/io/fred1895/github/democrud/domain/entities
+</br>
+Aqui é usada o menos possível de tecnologia!
 
 ### Camada de acesso a dados 
 Camada onde estará a classe(interface) responsavel por fazer a conexão direta com o banco de dados. </br>
-Nesse caso estamos usando uma ORM (Object-Relational Mapping) para fazer esse relacionamento. A ORM usada é a JPA/Hibernate. Ela implementa uma interface genérica onde já possue alguns metodos prontos com Queries já implementadas.
+Nesse caso estamos usando uma ORM (Object-Relational Mapping) para fazer esse relacionamento. A ORM usada é a JPA/Hibernate. Ela implementa uma interface genérica onde já possue alguns metodos prontos com Queries já implementadas. </br>
+https://github.com/fred1895/simple-crud/tree/master/src/main/java/io/fred1895/github/democrud/infra
 
 ### Camada de servico 
 Camada que aplicará todas as regras de negócio. </br>
-Essa camada usará as interfaces de acesso a camada de dados para poder criar as regra de negócio e os relacionamentos necessários. Meio do caminho entre a API e a aplicação em si.
+Essa camada usará as interfaces de acesso a camada de dados para poder criar as regra de negócio e os relacionamentos necessários. Meio do caminho entre a API e a aplicação em si. </br>
+https://github.com/fred1895/simple-crud/tree/master/src/main/java/io/fred1895/github/democrud/infra
 
 ### Controladores REST
 Camada que expões os endpoints necessários para a aplicação cliente fazer as requisições HTTP necessárias. </br>
 Essa camada chama os metódos criados na camada de serviço. Não é uma boa prática colocar as regras de negócio nessa camada. 
+</br>
+https://github.com/fred1895/simple-crud/tree/master/src/main/java/io/fred1895/github/democrud/api/controllers
